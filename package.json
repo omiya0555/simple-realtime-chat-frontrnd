@@ -12,7 +12,8 @@
     "laravel-echo": "^1.16.1",
     "pinia": "^2.2.4",
     "pusher-js": "^8.4.0-rc2",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
