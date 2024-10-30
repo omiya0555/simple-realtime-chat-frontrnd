@@ -1,15 +1,15 @@
 <template>
     <div class="chat">
-        <div class="messages max-w-4xl mx-auto bg-blue-200 rounded-md">
-            <h2 class="text-2xl font-bold mb-4 p-2">Chat with {{ otherUserName }}</h2>
+        <h2 class="flex justify-center text-2xl text-gray-600 font-bold mb-4 p-2">Chat with {{ otherUserName }}</h2>
+        <div class="messages max-w-4xl mx-auto bg-gray-200 rounded-md">
             <div v-for="message in messages" :key="message.id" class="message p-2">
                 <div v-if="message.sender_id == otherUserId" class="flex justify-start">
-                    <img :src="otherUserIcon" alt="User Icon" class="w-11 h-11 rounded-full">
+                    <img :src="otherUserIcon" alt="User Icon" class="w-11 h-11 ml-3 rounded-full">
                     <span class="ml-6 p-2 w-fit bg-white rounded-xl">{{ message.message }}</span>
                 </div>
                 <div v-if="message.sender_id != otherUserId" class="flex justify-end">
                     <span class="mr-6 p-2 w-fit bg-white rounded-xl">{{ message.message }}</span>
-                    <img :src="currentUserIcon" alt="Your Icon" class="w-11 h-11 rounded-full">
+                    <img :src="currentUserIcon" alt="Your Icon" class="w-11 h-11 mr-3 rounded-full">
                 </div>
             </div>
             <div class="flex bg-white border p-2 w-full mx-auto">

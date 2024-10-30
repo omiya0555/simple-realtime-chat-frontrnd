@@ -1,11 +1,14 @@
 <template>
     <div class="home">
-        <h1 class="text-2xl font-bold mb-4">User List</h1>
-        <ul>
-            <li v-for="user in users" :key="user.id" class="mb-2">
-                <button @click="enterChatRoom(user.id)">{{ user.name }}</button>
-            </li>
-        </ul>
+        <h2 class="flex justify-center text-2xl text-gray-600 font-bold mb-24">My frends</h2>
+        <div class="cards flex justify-center flex-wrap gap-8">
+            <div v-for="user in users" :key="user.id" 
+                @click="enterChatRoom(user.id)"
+                class="card mb-2 bg-gray-200 border border-white shadow-lg backdrop-blur-md rounded-xl text-center cursor-pointer transition-all transform hover:scale-105 active:scale-95 active:rotate-1.7deg text-black font-bold flex items-center justify-center select-none w-[190px] h-[254px]">
+
+                {{ user.name }}
+            </div>
+        </div>
     </div>
 </template>
 
@@ -20,8 +23,8 @@ const router = useRouter();
 
 const fetchUsers = async () => {
     try {
-        const userResponse  = await axios.get('http://localhost/api/me');
-        currentUserId.value = userResponse.data.id;
+        const userResponse      = await axios.get('http://localhost/api/me');
+        currentUserId.value     = userResponse.data.id;
 
         const usersResponse = await axios.get('http://localhost/api/users');
         users.value = usersResponse.data.users.filter(

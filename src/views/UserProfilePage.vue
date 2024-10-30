@@ -1,10 +1,13 @@
 <template>
     <div class="profile">
-        <h1 class="text-2xl font-bold mb-4">Profile</h1>
-        <div class="user-info">
-            <p><strong>Name:</strong>{{ currentUserName }}</p>
-            <p><strong>Email:</strong>{{ currentUserEmail }}</p>
+        <h2 class="flex justify-center text-2xl text-gray-600 font-bold mb-24">Profile</h2>
+        <div class="card mb-2 bg-gray-200 border border-white shadow-lg backdrop-blur-md rounded-xl text-center cursor-pointer transition-all transform hover:scale-105 active:scale-95 active:rotate-1.7deg text-black font-bold flex items-center justify-center select-none w-[190px] h-[254px] m-auto">        
+            <div class="user-info flex flex-col">
+                <span><strong>Name:</strong>{{ currentUserName }}</span>
+                <span><strong>Email:</strong>{{ currentUserEmail }}</span>
+            </div>
         </div>
+
     </div>
 </template>
 

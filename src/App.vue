@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <nav v-if="isLoggedIn" class="p-4 bg-white flex justify-between items-center">
+    <nav v-if="isLoggedIn" class="flex justify-between items-center p-4 mb-4 border">
       <div>
-        <router-link to="/" class="mr-4">Home</router-link>
-        <router-link to="/profile" class="mr-4">Profile</router-link>
+        <router-link to="/" class="mr-4 nav-link">Frends</router-link>
+        <router-link to="/profile" class="mr-4 nav-link">Profile</router-link>
       </div>
       <div>
         <button @click="logout" class="text-red-600">Logout</button>
@@ -47,15 +47,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
-nav a {
-  text-decoration: none;
-  color: #333;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+.nav-link {
+  @apply no-underline text-gray-600 py-2 px-4 rounded;
 }
 
-nav a.router-link-active {
-  background-color: #4f46e5;
-  color: #fff;
+.nav-link.router-link-active {
+  @apply bg-gray-500 text-white;
 }
 </style>
