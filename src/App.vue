@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav v-if="isLoggedIn" class="p-4 bg-gray-200 mb-4 flex justify-between items-center">
+    <nav v-if="isLoggedIn" class="p-4 bg-white flex justify-between items-center">
       <div>
         <router-link to="/" class="mr-4">Home</router-link>
         <router-link to="/profile" class="mr-4">Profile</router-link>
